@@ -1,0 +1,25 @@
+.App-header {
+    background-color: pink;
+    padding: 10px;
+    text-align: right;
+}
+
+.items-list-wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item-card {
+    width: 250px;
+    margin: 0 10px 32px;
+    background-color: pink;
+    text-align: left;
+    border: 1px solid lightgray;
+}
+
+.item-list-image {
+    width: 100%;
+    border: 1px solid lightgray;
+}
