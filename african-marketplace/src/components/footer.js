@@ -6,7 +6,7 @@ export function Footer() {
         <FooterStyle>
             <h1>African Marketplace</h1>
             <div className="copyright">
-                © 2020 Copyright: Build-Week-African-Marketplace-III
+                © 2020 Copyright: Build-Week-African-Marketplace-2
             </div>
         </FooterStyle>
     )
