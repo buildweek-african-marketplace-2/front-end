@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Login, SignUp, Header, Footer, ItemForm, PrivateRoute, ItemList } from './components/index.js';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {/* Routes Section Start */}
+      <Switch>
+        
+        <Route exact path='/' render={(props) => <ItemList {...props} />} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' render={(props) => <SignUp {...props} />} />
+        <PrivateRoute path='/item-form' component={ItemForm} />
+
+      </Switch>
+      {/* End of Routes Section */}
+      <Footer />
+
     </div>
   );
 }
