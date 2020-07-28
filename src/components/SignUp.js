@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import * as yup from "yup";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+// import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 import axios from 'axios';
 
@@ -29,21 +29,18 @@ function SignUp(props) {
     const formSubmit = e => {
         e.preventDefault();
         axios
-          .post("https://sauti-africa.herokuapp.com/api/register", formState)
+          .post("https://afrikan-market.herokuapp.com/api/auth/register", formState)
           .then(res => {
            
-            setPost(res.data); // get just the form data from the REST api
-            console.log("success", res);
-            props.history.push('/')
-            
+            // setPost(res.data); // get just the form data from the REST api
+            console.log("success", res.data);
+          }).then(res =>{
             // reset form if successful
             setFormState({
-                 
                 username: '',
                 password: '',
-                
             });
-
+            props.history.push('/')
           })
           .catch(err => console.log(err.response));
       };

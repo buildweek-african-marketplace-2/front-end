@@ -32,9 +32,10 @@ const Login = () => {
         axios
             .post("https://afrikan-market.herokuapp.com/api/auth/login", formState)
             .then(response => {
-                console.log(response)
+                console.log(response.data)
+                console.log(response.data.token)
                 localStorage.setItem('token', response.data.token)
-            })         
+            })       
             .catch(err => console.log("something went wrong", err))
     }
 
