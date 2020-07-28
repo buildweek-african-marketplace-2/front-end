@@ -1,39 +1,34 @@
 import React, { useState} from 'react';
 import * as yup from "yup";
-import { axiosWithAuth } from "../axiosWithAuth";
-import { Form, Input, PrimaryButton } from './StyledComponents';
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-export function SignUp(props) {
+import axios from 'axios';
+
+function SignUp(props) {
 
     const formSchema = yup.object().shape({
-        name: yup.string().min( 2, `Must be more than 2 characters`).required("Name is a required field"),
-        email: yup.string().email("must be a valid email address").required("must include a valid email"),
+        username: yup.string().min( 2, 'Must be more than 2 character').required("Username is a required field"),
         password: yup.string().required('Password is required'),
         // passwordConfirmation: yup.string(),
         // .oneOf([yup.ref('password'), null], 'Passwords must match'),
-        location: yup.string().required('Please type a valid city'),
     })
 
     //set state for form
-    const [formState, setFormState] = useState({
-        name: '', 
-        email: '',
+    const [formState, setFormState] = useState({ 
+        username: '',
         password: '',
-        location: ""
     });
     // set state for errors
-    const [errors, setErrors] = useState({
-        name: '', 
-        email: '',
+    const [errors, setErrors] = useState({ 
+        username: '',
         password: '',
-        location: ""
     });
 
     const [post, setPost] = useState([]);
 
     const formSubmit = e => {
         e.preventDefault();
-        axiosWithAuth()
+        axios
           .post("https://sauti-africa.herokuapp.com/api/register", formState)
           .then(res => {
            
@@ -43,10 +38,10 @@ export function SignUp(props) {
             
             // reset form if successful
             setFormState({
-                name: '', 
-                email: '',
+                 
+                username: '',
                 password: '',
-                location: ""
+                
             });
 
           })
@@ -73,6 +68,7 @@ export function SignUp(props) {
     
       const inputChange = e => {
         e.persist();
+        console.log(formState)
 
         const newFormData = {
           ...formState,
@@ -85,41 +81,25 @@ export function SignUp(props) {
 
 
     return (
-        <Form className="centeredToPageForms" onSubmit={formSubmit}>
+        <form className="centeredToPageForms" onSubmit={formSubmit}>
             <h1>Sign Up</h1>
-
-                {/* Name */}
-                <Input 
-                    name='name'
+                <input 
+                    name='username'
                     type='text'
-                    placeholder='Name'
+                    placeholder='Username'
                     onChange={inputChange}
-                />{errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
-                
-                {/* Email */}
-                <Input 
-                    name='email'
-                    type='text'
-                    placeholder='Email Address'
-                    onChange={inputChange}
-                />{errors.email.length > 0 ? (<p className='error'>{errors.email}</p>) : null}
+                />{errors.username.length > 0 ? <p className='error'>{errors.username}</p> : null}
                 
                 {/* Password */}
-                <Input 
+                <input 
                     name='password'
                     type='password'
                     placeholder='Password'
                     onChange={inputChange}
                 />{errors.password.length > 0 ? (<p className='error'>{errors.password}</p>) : null}
-                
-                {/* Location - city */}
-                <Input 
-                    name='location'
-                    type='text'
-                    placeholder='City'
-                    onChange={inputChange}
-                />{errors.location.length > 0 ? <p className='error'>{errors.location}</p> : null}
-              <PrimaryButton >Submit</PrimaryButton>
-        </Form>
+              <button>Submit</button>
+        </form>
     )
 }
+
+export default SignUp;

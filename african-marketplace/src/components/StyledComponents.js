@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+/*import styled from 'styled-components';
 import { defaultTheme, typeScale, primaryFont, neutral, black } from '../utils';
 import { Link } from 'react-router-dom';
 import Radium from 'radium';
@@ -187,3 +187,4 @@ export const Select = styled.select`
          padding: 0px 2px 1px;
        }
 `
+*/
