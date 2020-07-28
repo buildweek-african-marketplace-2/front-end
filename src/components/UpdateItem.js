@@ -60,7 +60,7 @@ const UpdateMovie = props => {
                         type="text"
                         name="name" 
                         onChange={handleChange} 
-                        value={movieValues.name} 
+                        value={itemValues.name} 
                         placeholder="name" 
                     />
                 </label>
@@ -69,7 +69,7 @@ const UpdateMovie = props => {
                         type="text"
                         name="image"
                         onChange={handleChange}
-                        value={movieValues.image}
+                        value={itemValues.image}
                         placeholder="image"
                     />
                 </label>
@@ -78,7 +78,7 @@ const UpdateMovie = props => {
                         type="text"
                         name="description"
                         onChange={handleChange}
-                        value={movieValues.description}
+                        value={itemValues.description}
                         placeholder="description"
                     />
                 </label>
@@ -87,14 +87,14 @@ const UpdateMovie = props => {
                         type="text"
                         name="price"
                         onChange={handleChange}
-                        value={movieValues.price}
+                        value={itemValues.price}
                         placeholder="price"
                     />
                     <input 
                         type="text"
                         name="location"
                         onChange={handleChange}
-                        value={movieValues.location}
+                        value={itemValues.location}
                         placeholder="location"
                     />
                 </label>
