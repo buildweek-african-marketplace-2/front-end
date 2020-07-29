@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+
+import { useParams, useHistory } from 'react-router-dom';
 
 const initialValues = {
-    id: '',
     image: '',
     name: '',
     description: '',
@@ -11,21 +12,38 @@ const initialValues = {
     location: '',
 };
 
-const UpdateMovie = props => {
-    const { push } = useHistory();
+const UpdateMovie = (props) => {
+    console.log('here are the props', props);
     const { id } = useParams();
+    const history = useHistory();
     const [ itemValues, setItemValues ] = useState(initialValues);
 
+    console.log('here are the itemValues', itemValues)
+
     useEffect(() => {
-        axios.get(`https://afrikan-market.herokuapp.com/api/items/${id}`)
-        .then(res => {
-            console.log(res);
-            setItemValues(res.data);
-        })
-        .catch(err => {
-            console.log(err);
-        })
-    }, [id])
+        axiosWithAuth()
+            .get(`https://afrikan-market.herokuapp.com/api/items/${id}`)
+            .then(res => {
+                console.log(res)
+                setItemValues(res.data)
+            })
+            .catch(err => {
+                console.log('error retrieving items', err)
+            })
+    }, [])
+
+    const handleSubmit = e => {
+       e.preventDefault();
+
+       axiosWithAuth().put(`https://afrikan-market.herokuapp.com/api/items/${itemValues.id}`, itemValues)
+            .then(res => {
+                console.log(res);
+                setItemValues(initialValues);
+            })
+            .catch(err => {
+                console.log('error updating items', err)
+            })
+    }
 
     const handleChange = e => {
         let name = e.target.name;
@@ -37,17 +55,17 @@ const UpdateMovie = props => {
         })
     }
 
-    const handleSubmit = e => {
+    const deleteItem = e => {
         e.preventDefault();
 
-        axios.put(`https://afrikan-market.herokuapp.com/api/items/${id}`, itemValues)
+        axiosWithAuth()
+            .delete(`https://afrikan-market.herokuapp.com/api/items/${itemValues.id}`)
             .then(res => {
-                console.log(res);
-                setItemValues(initialValues);
-                props.setRefresh(true);
+                console.log('delete success', res);
+                history.push('/items');
             })
             .catch(err => {
-                console.log(err)
+                console.log('error deleting item', err)
             })
     }
 
@@ -100,6 +118,7 @@ const UpdateMovie = props => {
                 </label>
 
                 <button>Update</button>
+                <button onClick={deleteItem}>Delete</button>
             </form>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Styles.css';
 
 import ItemList from './components/ItemList';
@@ -9,7 +9,6 @@ import UpdateItem from './components/UpdateItem';
 
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios';
 
 function App() {
 
@@ -25,7 +24,7 @@ function App() {
         </header>
         <Route path="/login" component={Login} />
         <Route path='/register' component={SignUp} />
-        <Route path='/update-item' component={UpdateItem} />
+        <Route path='/update-item/:id' component={UpdateItem} />
         <Route path="/items" component={ItemList} />
         <Route path='/item-form' component={ItemForm} />
       </div>
