@@ -5,6 +5,7 @@ import ItemList from './components/ItemList';
 import ItemForm from './components/ItemForm';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import HomePage from './components/HomePage';
 
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
@@ -39,6 +40,7 @@ function App() {
         <Route path='/register' component={SignUp} />
         <Route path="/items" render={props => <ItemList {...props} items={items} />} />
         <Route path='/item-form' component={ItemForm} />
+        <Route exact path='/' component={HomePage} />
       </div>
     </Router>
   );
