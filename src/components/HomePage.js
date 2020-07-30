@@ -12,7 +12,8 @@ const HomePage = () => {
                 </div>
                 <div className="Home-Buttons">
                     <Link to='/login'>Login</Link><br />
-                    <Link to='/register'>Register!</Link>
+                    <Link to='/register'>Register!</Link><br />
+                    <Link to='/items'>Shop Now!</Link>
                 </div>
             </div>
     )
