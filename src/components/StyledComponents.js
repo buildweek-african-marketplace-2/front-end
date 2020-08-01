@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+/*import styled from 'styled-components';
 import { defaultTheme, typeScale, primaryFont, neutral, black } from '../utils';
 import { Link } from 'react-router-dom';
 import Radium from 'radium';
@@ -50,8 +50,8 @@ export const SmallButton = styled(PrimaryButton) `
 `
 
 export const Form = styled.form `
-    width: 400px;
-    height: 400px;
+    width: 477px;
+    height: 515px;
     background: rgba(251, 175, 0, 0.76);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -60,8 +60,6 @@ export const Form = styled.form `
     justify-content: space-around;
     font-family: ${primaryFont};
     color: ${defaultTheme.primaryFontColor};
-    margin: 100px 0 0 500px;
-    opacity: 90%;
 `
 export const Input = styled.input `
     border: none;
@@ -189,3 +187,4 @@ export const Select = styled.select`
          padding: 0px 2px 1px;
        }
 `
+*/

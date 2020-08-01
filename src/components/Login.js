@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as yup from 'yup';
-import { Form, Input, PrimaryButton } from './StyledComponents';
 
 
 const formSchema = yup.object().shape({
@@ -72,11 +71,12 @@ const Login = () => {
         <div className="login-container">
             <div>
                 <div>
-                    <Form onSubmit={formSubmit}>
-                    <h1>Login</h1>
+                    <h2>Login</h2>
+                    <form onSubmit={formSubmit}>
+
                         <label htmlFor="username">
                             <p>Username</p>
-                            <Input type="text" 
+                            <input type="text" 
                             name="username"  
                             placeholder="Username" 
                             value={formState.username} 
@@ -89,7 +89,7 @@ const Login = () => {
 
                         <label htmlFor="password">
                             <p>Password</p>
-                            <Input type="password" 
+                            <input type="password" 
                             name="password"  
                             placeholder="Password" 
                             value={formState.password} 
@@ -100,9 +100,9 @@ const Login = () => {
                     ) : null}
                         <br/>
 
-                        <PrimaryButton type="primary" className="submit" disabled={buttonDisabled}>Login</PrimaryButton>
+                        <button type="primary" className="submit" disabled={buttonDisabled}>Login</button>
 
-                    </Form>
+                    </form>
                 </div>
             </div>
         </div>
