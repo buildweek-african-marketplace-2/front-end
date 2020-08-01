@@ -1,4 +1,5 @@
 import React from 'react';
+import { SmallButton } from './StyledComponents';
 
 const dummyData = [{
     id: 0,
@@ -44,7 +45,7 @@ function ItemList() {
                         <p>{item.name}</p>
                         <p>{item.description}</p>
                         <p>{item.price}</p>
-                        <button>Add to Cart</button>
+                        <SmallButton>Add to Cart</SmallButton>
                     </div>
                 </div>
             ))}

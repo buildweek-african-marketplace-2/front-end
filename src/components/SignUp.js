@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import * as yup from "yup";
 // import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { Form, Input, PrimaryButton } from './StyledComponents';
 
 import axios from 'axios';
 
@@ -78,9 +79,9 @@ function SignUp(props) {
 
 
     return (
-        <form className="centeredToPageForms" onSubmit={formSubmit}>
+        <Form className="centeredToPageForms" onSubmit={formSubmit}>
             <h1>Sign Up</h1>
-                <input 
+                <Input 
                     name='username'
                     type='text'
                     placeholder='Username'
@@ -88,14 +89,14 @@ function SignUp(props) {
                 />{errors.username.length > 0 ? <p className='error'>{errors.username}</p> : null}
                 
                 {/* Password */}
-                <input 
+                <Input 
                     name='password'
                     type='password'
                     placeholder='Password'
                     onChange={inputChange}
                 />{errors.password.length > 0 ? (<p className='error'>{errors.password}</p>) : null}
-              <button>Submit</button>
-        </form>
+              <PrimaryButton>Submit</PrimaryButton>
+        </Form>
     )
 }
 

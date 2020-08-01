@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form, Input, PrimaryButton } from './StyledComponents';
 
 const initialItem = {
     item: '',
@@ -31,8 +32,8 @@ const ItemForm = () => {
     return (
         <div>
              <h2>Add New Item</h2>
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Input
           type="text"
           name="name"
           onChange={changeHandler}
@@ -40,7 +41,7 @@ const ItemForm = () => {
           value={item.name}
         />
 
-        <input
+        <Input
           type="number"
           name="price"
           onChange={changeHandler}
@@ -48,7 +49,7 @@ const ItemForm = () => {
           value={item.price}
         />
 
-        <input
+        <Input
           type="string"
           name="description"
           onChange={changeHandler}
@@ -56,8 +57,8 @@ const ItemForm = () => {
           value={item.description}
         />
 
-        <button className="form-button">Add New Item</button>
-      </form>
+        <PrimaryButton className="form-button">Add New Item</PrimaryButton>
+      </Form>
         </div>
     )
 }
