@@ -25,8 +25,6 @@ function SignUp(props) {
         password: '',
     });
 
-    const [post, setPost] = useState([]);
-
     const formSubmit = e => {
         e.preventDefault();
         axios
