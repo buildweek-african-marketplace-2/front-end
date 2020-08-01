@@ -40,7 +40,7 @@ const ItemForm = () => {
     return (
         <div>
              <h2>Add New Item</h2>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <input 
           type='text'
           name='image'
@@ -56,7 +56,7 @@ const ItemForm = () => {
           value={item.name}
         />
 
-        <input
+        <Input
           type="number"
           name="price"
           onChange={changeHandler}
@@ -64,7 +64,7 @@ const ItemForm = () => {
           value={item.price}
         />
 
-        <input
+        <Input
           type="string"
           name="description"
           onChange={changeHandler}
@@ -79,8 +79,8 @@ const ItemForm = () => {
           value={item.location}
         />
 
-        <button className="form-button">Add New Item</button>
-      </form>
+        <PrimaryButton className="form-button">Add New Item</PrimaryButton>
+      </Form>
         </div>
     )
 }
