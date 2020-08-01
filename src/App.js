@@ -6,6 +6,7 @@ import ItemForm from './components/ItemForm';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import UpdateItem from './components/UpdateItem';
+import HomePage from './components/HomePage';
 
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
@@ -21,8 +22,8 @@ function App() {
         <NavLink className="link" exact to='/items'>Marketplace</NavLink>
         <NavLink className="link" exact to="/item-form">Add Item</NavLink>
         <NavLink className="link" exact to="/login">Login</NavLink>
-        <NavLink className="link" exact to='/register'>Register</NavLink>
-        <NavLink className="link" exact to='/'>Account</NavLink>
+        <NavLink className="link" exact to='/register'>Sign Up</NavLink>
+        <NavLink className="link" exact to='/'>Home</NavLink>
         </HeaderStyle>
         <Route path="/login" component={Login} />
         <Route path='/register' component={SignUp} />
