@@ -80,7 +80,7 @@ export const Input = styled.input `
 export const ItemDiv = styled.div `
     background-color: ${defaultTheme.primaryColor};
     opacity: .95;
-    width: 10%;
+    width: 50%;
     height: 10%;
     padding: 40px;
     border-radius: 2px;
@@ -88,6 +88,7 @@ export const ItemDiv = styled.div `
     color: ${black}
     display: flex;
     align-items: center;
+    margin-left: 20%;
 `
 export const ItemCardStyle = styled.div `
     background-color: ${neutral};
