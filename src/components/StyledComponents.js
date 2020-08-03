@@ -51,7 +51,7 @@ export const SmallButton = styled(PrimaryButton) `
 
 export const Form = styled.form `
     width: 400px;
-    height: 400px;
+    height: 500px;
     background: rgba(251, 175, 0, 0.76);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -80,16 +80,20 @@ export const Input = styled.input `
 export const ItemDiv = styled.div `
     background-color: ${defaultTheme.primaryColor};
     opacity: .95;
-    width: 90%;
+    width: 50%;
+    height: 10%;
     padding: 40px;
     border-radius: 2px;
     font-family: ${primaryFont};
     color: ${black}
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
 `
-export const ItemCard = styled.div `
+export const ItemCardStyle = styled.div `
     background-color: ${neutral};
     border-radius: 2px;
-    text-align: left;
+    text-align: center;
     font-family: ${primaryFont};
     color: ${defaultTheme.tertiaryColor};
     h3 {
@@ -98,6 +102,10 @@ export const ItemCard = styled.div `
     }
     p {  
     padding: 10px;
+    }
+    img{
+        height: 100px;
+        width: 100px;
     }
 `
 

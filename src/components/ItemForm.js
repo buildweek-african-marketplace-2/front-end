@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { Form, Input, PrimaryButton } from './StyledComponents';
 
 const ItemForm = () => {
     const [item, setItem] = useState({
@@ -39,16 +40,16 @@ const ItemForm = () => {
 
     return (
         <div>
-             <h2>Add New Item</h2>
       <Form onSubmit={handleSubmit}>
-        <input 
+             <h2>Add New Item</h2>
+        <Input 
           type='text'
           name='image'
           placeholder='image link'
           value={item.image}
           onChange={changeHandler}
         />
-        <input
+        <Input
           type="text"
           name="name"
           onChange={changeHandler}
@@ -71,7 +72,7 @@ const ItemForm = () => {
           placeholder="Description"
           value={item.description}
         />
-        <input  
+        <Input  
           type="text"
           name="location"
           onChange={changeHandler}
